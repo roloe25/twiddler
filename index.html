@@ -6,22 +6,26 @@
   </head>
 
   <body>
+
+    <button class="shawndrostButton">shawndrost</button>
+    <button class="sharksforcheapButton"> sharksforcheap</button>
+    <button class="mracusButton">mracus</button>
+    <button class="douglascalhounButton">douglascalhoun</button>
+
     <br>
     <br>
     WhatsMyFace &nbsp<input id="myTweet" type="text" value="adds some text"> </input>
     <br>
     <br>
-    <button type="button">Get Some Tweets</button>
+    <button id="moreTweets" type="button">Get Some Tweets</button>
 
     <ul></ul>
-
-    <!-- adding my own inputs -->
 
 
     <script>
 
       $(document).ready(function(){
-        $("button").click(function(){
+        $("#moreTweets").click(function(){
           var $ul = $('ul');
           $ul.html('');
 
@@ -39,7 +43,8 @@
         }})
       });
     </script>
- <script>
+
+ <!-- <script>
 
     $(document).ready(function(){
       $("#myTweet").click(function(){
@@ -54,7 +59,7 @@
           index -= 1;
       })
     });
-  </script>
+  </script> -->
 
 
 
