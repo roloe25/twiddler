@@ -16,6 +16,7 @@
           var tweet = streams.home[index];
           var $tweet = $('<div></div>');
           $tweet.text('@' + tweet.user + ': ' + tweet.message);
+          //this bottom seems to be the export
           $tweet.appendTo($body);
           index -= 1;
         }
