@@ -26,7 +26,9 @@
 
     <br>
     <br>
+    <div>
     WhatsMyFace &nbsp<input id="myTweet" type="text" value="adds some text"> </input>
+    </div>
     <br>
     <br>
     <button id="moreTweets" type="button">Get Some Tweets</button>
@@ -36,7 +38,7 @@
 
     <script>
 
-      $(document).ready(function(){
+      //$(document).ready(function(){
         $("#moreTweets").click(function(){
           var $ul = $('ul');
           $ul.html('');
@@ -53,25 +55,29 @@
             $tweet.appendTo($($ul));
             index -= 1;
         }})
-      });
+      //});
     </script>
 
- <!-- <script>
+ <script>
 
     $(document).ready(function(){
-      $("#myTweet").click(function(){
-        var $ul = $('ul');
-        $ul.html('');
-        //im not yet sure how to move information from the browser to the script
-          var tweet = streams.home[index];
-          var $tweet = $('<li></li>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          //this bottom seems to be the export
-          $tweet.appendTo($($ul));
-          index -= 1;
-      })
+      var $ul = $('ul');
+          $ul.html('');
+
+          var index = streams.home.length - 1;
+          //the index will keep growing over time
+          //as i click it willmove the tweet from the index into the list
+          while(index >= 0){
+            var tweet = streams.home[index];
+            //preping to exprt from the script to the browser
+            var $tweet = $('<li></li>');
+            $tweet.text('@' + tweet.user + ': ' + tweet.message);
+            //this bottom seems to be the export
+            $tweet.appendTo($($ul));
+            index -= 1;
+          }
     });
-  </script> -->
+  </script>
 
 
 
