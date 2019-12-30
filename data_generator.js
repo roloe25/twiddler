@@ -11,10 +11,15 @@ streams.users.shawndrost = [];
 streams.users.sharksforcheap = [];
 streams.users.mracus = [];
 streams.users.douglascalhoun = [];
+
+//diff format
+// window.streams = {home:[],
+//                  users: { shawndrost: [],
+//                           sharksforcheap: [],
+//                           mracus: [],
+//                           douglascalhoun: []}};
+
 window.users = Object.keys(streams.users);
-
-
-
 
 // utility function for adding tweets to our data structures
 var addTweet = function(newTweet){
