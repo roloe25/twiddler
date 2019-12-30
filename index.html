@@ -30,7 +30,7 @@
 
     <form>
       <span>WhatsMyFace: </span>
-      <input id="numb" placeholder="type in your tweet!">
+      <input id="numb" placeholder="type in your tweet!" type="text">
       <button type="button" onclick ="myInputFunction()">Submit</button>
     </form>
 
@@ -39,6 +39,8 @@
     var xnuts;
     xnuts = document.getElementById("numb").value;
     writeTweet(xnuts)
+    document.getElementById('numb').value = ''
+    document.getElementById('numb').placeholder = ''
   }
 </script>
 
@@ -54,11 +56,6 @@
 
 
     <ul id="allTweets"></ul>
-
-
-
-
-
 
 
     <script>
