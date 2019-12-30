@@ -11,6 +11,7 @@ streams.users.shawndrost = [];
 streams.users.sharksforcheap = [];
 streams.users.mracus = [];
 streams.users.douglascalhoun = [];
+streams.users.WhatsMyFace = [];
 
 //diff format
 // window.streams = {home:[],
@@ -49,9 +50,11 @@ var randomMessage = function(){
 var generateRandomTweet = function(){
   var tweet = {};
   tweet.user = randomElement(users);
-  tweet.message = randomMessage();
-  tweet.created_at = new Date();
-  addTweet(tweet);
+  if (tweet.user !== "WhatsMyFace"){
+    tweet.message = randomMessage();
+    tweet.created_at = new Date();
+    addTweet(tweet);
+  }
 };
 
 for(var i = 0; i < 10; i++){
@@ -71,7 +74,7 @@ var writeTweet = function(message){
     throw new Error('set the global visitor property!');
   }
   var tweet = {};
-  tweet.user = visitor;
+  tweet.user =  WhatsMyFace;
   tweet.message = message;
   addTweet(tweet);
 };

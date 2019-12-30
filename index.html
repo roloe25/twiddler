@@ -17,16 +17,18 @@
 
     <div class="users">
       <span style="color:blue; font-size:larger;"> Following:</span>
-      <button class="users" class="shawndrostButton">shawndrost</button>
-      <button class="users" class="sharksforcheapButton"> sharksforcheap</button>
-      <button class="users" class="mracusButton">mracus</button>
-      <button class="users" class="douglascalhounButton">douglascalhoun</button>
-      <button class="users" class="douglascalhounButton">WhatsMyFace</button>
+      <button class="users" id="shawndrostButton">shawndrost</button>
+      <button class="users" id="sharksforcheapButton"> sharksforcheap</button>
+      <button class="users" id="mracusButton">mracus</button>
+      <button class="users" id="douglascalhounButton">douglascalhoun</button>
+      <button class="users" id="WhatsMyFaceButton">WhatsMyFace</button>
 
     </div>
 
     <br>
     <br>
+
+
     <div class="myInput">
       <label>WhatsMyFace </label>
       <input
@@ -34,6 +36,8 @@
         type="text"
         placeholder="add your tweet!"/>
     </div>
+
+
     <br>
     <button id="clearTweets" type="button">Clear Tweets</button>
 
@@ -55,35 +59,27 @@
           $ul.html('');
 
           streams.home = []
-          var index = streams.home.length - 1;
-          //the index will keep growing over time
-          //as i click it willmove the tweet from the index into the list
+          streams.users.shawndrost = [];
+          streams.users.sharksforcheap = [];
+          streams.users.mracus = [];
+          streams.users.douglascalhoun = [];
+          streams.users.WhatsMyFace = [];
+      })
 
-          while(index >= 0){
-            var tweet = streams.home[index];
-            //preping to exprt from the script to the browser
-            var $tweet = $('<li id="someTweets" ></li>');
-            $tweet.text('@' + tweet.user + ': ' + tweet.message);
-            //this bottom seems to be the export
-            $tweet.appendTo($($ul));
-            index -= 1;
-        }})
-      //});
     </script>
 
     <script>
-      //doesnt work yet
-      //$(document).ready(function(){
-        $(".shawndrostButton").click(function(){
+      //specific user
+        $("#shawndrostButton").click(function(){
           var $ul = $('ul');
           $ul.html('');
 
-          var index = streams.user.shawndrost - 1;
+          var index = streams.users.shawndrost.length - 1;
           //the index will keep growing over time
           //as i click it willmove the tweet from the index into the list
 
           while(index >= 0){
-            var tweet = streams.user.shawndrost[index];
+            var tweet = streams.users["shawndrost"][index];
             //preping to exprt from the script to the browser
             var $tweet = $('<li id="someTweets" ></li>');
             $tweet.text('@' + tweet.user + ': ' + tweet.message);
@@ -93,6 +89,94 @@
         }})
       //});
     </script>
+
+<script>
+    //specific user
+      $("#sharksforcheapButton").click(function(){
+        var $ul = $('ul');
+        $ul.html('');
+
+        var index = streams.users.sharksforcheap.length - 1;
+        //the index will keep growing over time
+        //as i click it willmove the tweet from the index into the list
+
+        while(index >= 0){
+          var tweet = streams.users["sharksforcheap"][index];
+          //preping to exprt from the script to the browser
+          var $tweet = $('<li id="someTweets" ></li>');
+          $tweet.text('@' + tweet.user + ': ' + tweet.message);
+          //this bottom seems to be the export
+          $tweet.appendTo($($ul));
+          index -= 1;
+      }})
+    //});
+  </script>
+   <script>
+      //specific user
+        $("#mracusButton").click(function(){
+          var $ul = $('ul');
+          $ul.html('');
+
+          var index = streams.users.mracus.length - 1;
+          //the index will keep growing over time
+          //as i click it willmove the tweet from the index into the list
+
+          while(index >= 0){
+            var tweet = streams.users["mracus"][index];
+            //preping to exprt from the script to the browser
+            var $tweet = $('<li id="someTweets" ></li>');
+            $tweet.text('@' + tweet.user + ': ' + tweet.message);
+            //this bottom seems to be the export
+            $tweet.appendTo($($ul));
+            index -= 1;
+        }})
+      //});
+    </script>
+
+     <script>
+        //specific user
+          $("#douglascalhounButton").click(function(){
+            var $ul = $('ul');
+            $ul.html('');
+
+            var index = streams.users.douglascalhoun.length - 1;
+            //the index will keep growing over time
+            //as i click it willmove the tweet from the index into the list
+
+            while(index >= 0){
+              var tweet = streams.users["douglascalhoun"][index];
+              //preping to exprt from the script to the browser
+              var $tweet = $('<li id="someTweets" ></li>');
+              $tweet.text('@' + tweet.user + ': ' + tweet.message);
+              //this bottom seems to be the export
+              $tweet.appendTo($($ul));
+              index -= 1;
+          }})
+
+        //});
+      </script>
+       <script>
+          //specific user
+            $("#WhatsMyFaceButton").click(function(){
+              var $ul = $('ul');
+              $ul.html('');
+
+              var index = streams.users.WhatsMyFace.length - 1;
+              //the index will keep growing over time
+              //as i click it willmove the tweet from the index into the list
+
+              while(index >= 0){
+                var tweet = streams.users["WhatsMyFace"][index];
+                //preping to exprt from the script to the browser
+                var $tweet = $('<li id="someTweets" ></li>');
+                $tweet.text('@' + tweet.user + ': ' + tweet.message);
+                //this bottom seems to be the export
+                $tweet.appendTo($($ul));
+                index -= 1;
+            }})
+          //});
+        </script>
+
 
     <script>
     //generate first batch or tweets
