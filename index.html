@@ -28,13 +28,21 @@
     <br>
     <br>
 
-
-    <form id="myInput">
-      <label>WhatsMyFace </label>
-      <input
-        type="text"
-        placeholder="add your tweet!"/>
+    <form>
+      <span>WhatsMyFace: </span>
+      <input id="numb" placeholder="type in your tweet!">
+      <button type="button" onclick ="myInputFunction()">Submit</button>
     </form>
+
+<script>
+  function myInputFunction(){
+    var xnuts;
+    xnuts = document.getElementById("numb").value;
+    writeTweet(xnuts)
+  }
+</script>
+
+
 
 
     <br>
@@ -46,6 +54,8 @@
 
 
     <ul id="allTweets"></ul>
+
+
 
 
 
@@ -81,7 +91,7 @@
             var tweet = streams.users["shawndrost"][index];
             //preping to exprt from the script to the browser
             var $tweet = $('<li id="someTweets" ></li>');
-            $tweet.text('@' + tweet.user + ': ' + tweet.message);
+            $tweet.text('@' + tweet.user + ': ' + tweet.message + tweet.created_at);
             //this bottom seems to be the export
             $tweet.appendTo($($ul));
             index -= 1;
@@ -103,7 +113,7 @@
           var tweet = streams.users["sharksforcheap"][index];
           //preping to exprt from the script to the browser
           var $tweet = $('<li id="someTweets" ></li>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
+          $tweet.text('@' + tweet.user + ': ' + tweet.message + tweet.created_at);
           //this bottom seems to be the export
           $tweet.appendTo($($ul));
           index -= 1;
@@ -124,7 +134,7 @@
             var tweet = streams.users["mracus"][index];
             //preping to exprt from the script to the browser
             var $tweet = $('<li id="someTweets" ></li>');
-            $tweet.text('@' + tweet.user + ': ' + tweet.message);
+            $tweet.text('@' + tweet.user + ': ' + tweet.message + tweet.created_at);
             //this bottom seems to be the export
             $tweet.appendTo($($ul));
             index -= 1;
@@ -146,7 +156,7 @@
               var tweet = streams.users["douglascalhoun"][index];
               //preping to exprt from the script to the browser
               var $tweet = $('<li id="someTweets" ></li>');
-              $tweet.text('@' + tweet.user + ': ' + tweet.message);
+              $tweet.text('@' + tweet.user + ': ' + tweet.message + tweet.created_at);
               //this bottom seems to be the export
               $tweet.appendTo($($ul));
               index -= 1;
@@ -168,7 +178,7 @@
                 var tweet = streams.users["WhatsMyFace"][index];
                 //preping to exprt from the script to the browser
                 var $tweet = $('<li id="someTweets" ></li>');
-                $tweet.text('@' + tweet.user + ': ' + tweet.message);
+                $tweet.text('@' + tweet.user + ': ' + tweet.message + tweet.created_at);
                 //this bottom seems to be the export
                 $tweet.appendTo($($ul));
                 index -= 1;
@@ -190,7 +200,7 @@
               var tweet = streams.home[index];
               //preping to export from the script to the browser
               var $tweet = $('<li id="someTweets" ></li>');
-              $tweet.text('@' + tweet.user + ': ' + tweet.message);
+              $tweet.text('@' + tweet.user + ': ' + tweet.message + tweet.created_at);
               //this bottom seems to be the export
               $tweet.appendTo($($ul));
               index -= 1;
@@ -212,7 +222,7 @@
             var tweet = streams.home[index];
             //preping to exprt from the script to the browser
             var $tweet = $('<li></li>');
-            $tweet.text('@' + tweet.user + ': ' + tweet.message);
+            $tweet.text('@' + tweet.user + ': ' + tweet.message + tweet.created_at);
             //this bottom seems to be the export
             $tweet.appendTo($($ul));
             index -= 1;
