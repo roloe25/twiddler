@@ -51,7 +51,7 @@ var generateRandomTweet = function(){
   var tweet = {};
   tweet.user = randomElement(users);
   if (tweet.user !== "WhatsMyFace"){
-    tweet.message = randomMessage();
+    tweet.message = randomMessage() + " ";
     tweet.created_at = new Date();
     addTweet(tweet);
   }
@@ -75,7 +75,7 @@ var writeTweet = function(message){
   // }
   var tweet = {};
   tweet.user =  "WhatsMyFace";
-  tweet.message = message;
+  tweet.message = message + " ";
   tweet.created_at = new Date();
   addTweet(tweet);
 };

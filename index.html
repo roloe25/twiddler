@@ -28,14 +28,17 @@
     <br>
     <br>
 
-    <form>
+
       <span>WhatsMyFace: </span>
-      <input id="numb" placeholder="type in your tweet!" type="text">
-      <button type="button" onclick ="myInputFunction()">Submit</button>
-    </form>
+      <input id="numb" placeholder="type in your tweet!" type="text" keydown="myInputFunction()">
+      <button type="button" onclick ="myTweetInputFunction()">Submit</button>
+
+
+
+
 
 <script>
-  function myInputFunction(){
+  function myTweetInputFunction(){
     var xnuts;
     xnuts = document.getElementById("numb").value;
     writeTweet(xnuts)
